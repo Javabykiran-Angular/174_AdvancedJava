@@ -1,0 +1,101 @@
+Last Lecture Agenda
+1 Modular Approach
+2 Implementation of Dao
+	- Data Access Layer => It deals with only DB 
+		- It is simple class
+	- BL => u can use also to write BL but it is not reconmendated 
+3 Entity class 
+	- It is ur POJO Class/ model 
+	class Employee{
+		String name;
+		String mobileno;
+		
+		// getter & setter
+		// tostring
+		// Arg & no Arg Constrc.
+		
+		
+	}
+	
+	
+	class EmployeeDao{
+		
+		final String Db_Driver='...';
+		final String Db_Url="..."
+		final String Db_username=".." 
+		final String Db_root="..."
+		
+		// Object 
+		Connection con=null;
+		PreparedStatement pst=null;
+		ResultSet rs=null;
+		
+		// Step 1 & 2 
+		
+		public void openDB(){
+		try{
+			Class.forName(...)
+			
+			con= DriverManager.getConnection(..,..,..)
+			
+			
+			
+		} catcht(...){
+		...
+		}
+		}
+		
+		// step 3 & 4 
+		
+		public int insert(Employee emp){
+			
+			String query="...";
+			int status=0;
+			
+			openDB()
+			
+			pst= con.prepareStatement(query);
+			
+			pst.setString(1,emp.getName());
+			....
+			 status= pst.ececuteUpdate();
+			
+			...
+			
+			return status;
+			
+		}
+		
+		
+		// Step 5
+		
+		public void closeDB(){
+			if(con!=null){
+				con.close();
+				con=null;
+			}
+			
+			...
+		}
+		
+		
+	}
+	
+	
+4 main class 
+
+
+summary & Interview Questions
+1 Explain Modular Approach
+2 How to Implementation of Dao 
+
+Today's Lecture Agenda
+1 Modular Approach
+	1 update
+	2 delete
+	3 getAllRecord
+	4 getParticularRecordByid
+
+summary & Interview Questions
+1 Explain Modular Approach
+2 How to Implementation of Dao 
