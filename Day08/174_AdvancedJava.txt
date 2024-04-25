@@ -1,0 +1,50 @@
+Last Lecture Agenda
+1 Servlet Life Cycle?
+	1 init => only once it is invoked 
+	2 service => doget => It invokes many more time => default doget method is invoked
+	3 destroy => it invoked only once 
+	
+3 How to create servlet project?
+4 How to get Data from parameter?
+localhost:8080/DemoServlet/Myservlet?id=9
+
+login.html 
+
+
+summary & Interview Questions
+1 What is Servlet?
+2 Explain Servlet Life Cycle?
+3 How to get Data from parameter?
+4 How to create servlet project?
+5 How to send response to front end?
+
+
+Today's Lecture Agenda
+1 Send Response of Html format
+2 Connect With database
+3 Servlet collabration
+
+- Call from one servlet to another servlet is called servlet collabration. We can add another HTML file (i.e. call from one servlet to another html file). To perform servlet collabration task we have to required an object of request Dispatcher. Request disppachter object we can obtained from HttpServletRequest 
+
+4 Request Dispatcher
+- It has 2 methods 
+	- forward(request,response)
+	- include(request,response)
+- In This case URL is not Change
+
+Limitation of RD-
+  -When we forward the request it does not get destroyed, while submitting some sensitive information it creates a problem of data redundancy (i.e. repetation) so we must avoid  use of request disppachter. To overcome this problem send redirect method comes into the pictures. This method is directly called using an object of HttpServletResponse
+  
+
+
+5 Forward
+6 include
+
+summary & Interview Questions
+1 Explain Servlet Collabration
+2 Explain Forward & include method
+3 Explain Request Dispatcher
+
+
+ 
+
