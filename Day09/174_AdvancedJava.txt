@@ -1,0 +1,155 @@
+Last Lecture Agenda
+1 Send Response of Html format
+	PrintWriter pw= response.getWriter();
+	pw.print("Welcome ");
+	pw.print("<html><head><ttitle>...</title</head><body>");
+	pw.print("<h2>...</h2></body></html");
+	
+2 Connect With database
+	1 entity class => Pojo class student 
+	2 dao 
+		//Step1 & 2
+			public void openDb(){
+			...
+			}
+			
+		public Student checkUSer(String username, String pwd){
+			String query="select * from student where username=? and password=?";
+			
+			...
+		}	
+			
+		// Step 5
+		
+		public void closeDB(){
+			
+		}
+3 Servlet collabration
+
+	if(stude!=null){
+		RequestDispatcher rd= request.getRequestDispatcher("Welcome");
+		
+		rd.forward(request,response);
+		// navigate to welcome servlet 
+	}else{
+		// display msg login.html 
+		RequestDispatcher rd= request.getRequestDispatcher("login.html");
+		
+		pw.write("<h2> Invalid User</h2>")
+		rd.include(request,response);
+			
+	}
+
+- Call from one servlet to another servlet is called servlet collabration. We can add another HTML file (i.e. call from one servlet to another html file). To perform servlet collabration task we have to required an object of request Dispatcher. Request disppachter object we can obtained from HttpServletRequest 
+
+4 Request Dispatcher
+- It has 2 methods 
+	- forward(request,response)
+	- include(request,response)
+- In This case URL is not Change
+
+Limitation of RD-
+  -When we forward the request it does not get destroyed, while submitting some sensitive information it creates a problem of data redundancy (i.e. repetation) so we must avoid  use of request disppachter. To overcome this problem send redirect method comes into the pictures. This method is directly called using an object of HttpServletResponse
+  
+
+
+5 Forward
+6 include
+
+summary & Interview Questions
+1 Explain Servlet Collabration
+2 Explain Forward & include method
+3 Explain Request Dispatcher
+
+
+
+Today's Lecture Agenda
+1 Session Management 
+2 Jsp Introduction
+ - It is A front End Technology
+ - It is Java Specific platform 
+  JSP are out-dated -- still used in old applications.
+	- JSP only Support 3 methods
+		1 GET 2 POST 3 HEAD
+	- JSP = Presentation Logic* + Business Logic
+	- JSP is front-end technology i.e. web ui.
+* JSP is converted into the servlet during execution.
+	- JSP page -- .jsp
+	- It Contain HTML tags + JSP tags + Custom tags + Java code
+	* Writing/Embedding Java code in JSP pages is "worst" practice.
+	* Best practice is to use "Java Beans" with JSP pages for BL. 	
+JSP Tags
+	JSP Syntax:
+    - Contains markup: HTML tags, JSP tags, Custom tags.
+	- Server side code (Java) -- will be executed on server -- not sent to client.
+	-  some basic tags as follow
+	  a. Directive: Defines behaviour of JSP (generated servlet).
+		- It define structure of page
+		
+		import java.lang.util.*
+		
+			- <%@ page ... %> - Page Directive			
+			   - In page directive you can use various attribute to give more info about the page like
+			     1 language="java"
+				 2 contentType="text/html"
+				 3 import="packagename.classname" here you can import one or more package at a time only use comma seperatated
+				 4 isErrorPage="true"
+				 
+			- <%@ include ... %>			
+			   1 If we have to add some static content in our page we use include directive
+			   2 Basically we add an HTML content because it is static
+			   3 Generally we use Header,footer, nav bar or any Other universal content etc.
+			   
+			- <%@ taglib ... %> - JSP Custom Lib 
+			   1 Declares a tag library, containing custom actions, used in the page
+			  
+		b. Declaration: 
+		    - Java code (fields/methods) to be added in generated servlet.
+			-  you will most often find declaration tags working in combination with expression or scriptlet tags
+			- It is used generally declare variable & methods(Signature(retrun type ,name ,parameter ) + Defination)
+			- Syntax  <%! int a=10; // Forward Declaration & Defination 
+					public void test(){
+					......
+					}
+				
+			%>
+			- In declaration tag after every statement we required to use ';'
+		c. Scriptlet: 
+			- Java code to be executed per request i.e. to be added in service() method.
+			- If variable declare its scope in jsp service method
+			- To write a Business logic/Call BL
+			- Syntax <% a++; %>
+			- In scriptlet tag after every statement we required to use ';'
+		d. Expression
+			- Java expression (that evaluates to some value) whose result is added in generated response (writer).
+			- To excute an expression or to simply print actual value.
+			- Syntax  <%=a  %>
+			- In expression tag don't use ';'
+		e. Comment
+			- Server side comment, which is discarded during processing and not visible to client.
+			- If you want use jsp comment you can use it.
+			- <%-- ... --%>
+			
+3 Implicit Object
+JSP Implicit objects:
+	- Local variables of jspService() methods & hence directly accessible in request handling stage i.e. scriptlets & expressions.
+	- When JSP Page gets compiled it gets translated into corresponding sevlet at that time it creates few objects they are known as implicit object of JSP
+	- request: HttpServletRequest (Main)
+	- response: HttpServletResponse (Main)
+	- session: HttpSession (Main)
+	- config: ServletConfig
+	- application: ServletContext
+	- out: JspWriter (PrintWriter) (Main)
+	- page: Object (this pointer)
+	- pageContext: PageContext (state management in JSP) - This encapsulates use of server-specific features like higher performance JspWriters.
+	- exception: Throwable -- only for custom error pages - JSP.
+		<%@ page isErrorPage="true" %> (Main)
+
+
+summary & Interview Questions
+1 What is JSP 
+2 Explain JSP tags
+3 How to use tags 
+
+ 
+
