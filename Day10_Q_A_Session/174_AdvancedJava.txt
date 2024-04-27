@@ -1,0 +1,240 @@
+Last Lecture Agenda
+1 Session Management 
+
+	LoginServlet 
+		
+		HttpSession session= request.getSession();
+		
+		session.setAttribute("username",s.getusername());
+		
+		
+		welcome.java
+		
+		HttpSession session= request.getSession();
+		String username = (String) session.getAttribute("username");
+		Syso(username);
+
+2 Jsp Introduction
+ - It is A front End Technology
+ - It is Java Specific platform 
+  JSP are out-dated -- still used in old applications.
+	- JSP only Support 3 methods
+		1 GET 2 POST 3 HEAD
+	- JSP = Presentation Logic* + Business Logic
+	- JSP is front-end technology i.e. web ui.
+* JSP is converted into the servlet during execution.
+	- JSP page -- .jsp
+	- It Contain HTML tags + JSP tags + Custom tags + Java code
+	* Writing/Embedding Java code in JSP pages is "worst" practice.
+	* Best practice is to use "Java Beans" with JSP pages for BL. 	
+JSP Tags
+	JSP Syntax:
+    - Contains markup: HTML tags, JSP tags, Custom tags.
+	- Server side code (Java) -- will be executed on server -- not sent to client.
+	-  some basic tags as follow
+	  a. Directive: Defines behaviour of JSP (generated servlet).
+		- It define structure of page
+		
+		import java.lang.util.*
+		
+			- <%@ page ... %> - Page Directive			
+			   - In page directive you can use various attribute to give more info about the page like
+			     1 language="java"
+				 2 contentType="text/html"
+				 3 import="packagename.classname" here you can import one or more package at a time only use comma seperatated
+				 4 isErrorPage="true"
+				 
+			- <%@ include ... %>			
+			   1 If we have to add some static content in our page we use include directive
+			   2 Basically we add an HTML content because it is static
+			   3 Generally we use Header,footer, nav bar or any Other universal content etc.
+			   
+			- <%@ taglib ... %> - JSP Custom Lib 
+			   1 Declares a tag library, containing custom actions, used in the page
+			  
+		b. Declaration: 
+		    - Java code (fields/methods) to be added in generated servlet.
+			-  you will most often find declaration tags working in combination with expression or scriptlet tags
+			- It is used generally declare variable & methods(Signature(retrun type ,name ,parameter ) + Defination)
+			- Syntax  <%! int a=10; // Forward Declaration & Defination 
+					public void test(){
+					......
+					}
+				
+			%>
+			- In declaration tag after every statement we required to use ';'
+		c. Scriptlet: 
+			- Java code to be executed per request i.e. to be added in service() method.
+			- If variable declare its scope in jsp service method
+			- To write a Business logic/Call BL
+			- Syntax <% a++; %>
+			- In scriptlet tag after every statement we required to use ';'
+		d. Expression
+			- Java expression (that evaluates to some value) whose result is added in generated response (writer).
+			- To excute an expression or to simply print actual value.
+			- Syntax  <%=a  %>
+			- In expression tag don't use ';'
+		e. Comment
+			- Server side comment, which is discarded during processing and not visible to client.
+			- If you want use jsp comment you can use it.
+			- <%-- ... --%>
+			
+3 Implicit Object
+JSP Implicit objects:
+	- Local variables of jspService() methods & hence directly accessible in request handling stage i.e. scriptlets & expressions.
+	- When JSP Page gets compiled it gets translated into corresponding sevlet at that time it creates few objects they are known as implicit object of JSP
+	- request: HttpServletRequest (Main)
+	- response: HttpServletResponse (Main)
+	- session: HttpSession (Main)
+	- config: ServletConfig
+	- application: ServletContext
+	- out: JspWriter (PrintWriter) (Main)
+	- page: Object (this pointer)
+	- pageContext: PageContext (state management in JSP) - This encapsulates use of server-specific features like higher performance JspWriters.
+	- exception: Throwable -- only for custom error pages - JSP.
+		<%@ page isErrorPage="true" %> (Main)
+
+
+summary & Interview Questions
+1 What is JSP 
+2 Explain JSP tags
+3 How to use tags 
+
+
+
+Today's Lecture Agenda
+1 What is Database Driver? => nilam, Shivam
+	Database driver
+	- A software that enables java application to interact with database. It is simple carrier to connect your java application to data base. Where driver is act like bridge between any application to db that store the data into database.Here 4 different Types of driver 
+
+	1 Type I --- Jdbc Odbc Bridge Driver
+			JDBC -> java database connectivity (Design by sunmicrosystem)
+			odbc -> Open database connectivity (Design by windows microsoft)
+			- Here ODBC is only windows specific os it is not used for any other OS, so it is removed support in java 7, in the previous version it has support 
+			
+	2 Type II --- JDBC - Native API 		
+		
+			- Here we avoid ODBC instead of we use vendor specific driver 
+			- In this type finally removed OS dependancy.
+			- But this vendor specific driver has to be installed on all system 
+			Partially in C & Java --- Vendor specific
+		- e.g. Oracle OCI driver -- but now outdated.
+		
+	3 Type III --- JDBC network protocol driver
+		- In this type initially we installed our API on server and that server will transform your api to client machine
+		- When someone is connected to this server through the internet a small copy of API is sending to respective client machine.
+		- Basically it is indirectly installed that API in your machine through network so it is called network protocol driver.
+		- Here Type 2 API driver is running on server and whenever you give the request to server it transform that API in your machine and installed it.
+	
+		Middleware driver
+		- e.g. WebLogic RMI driver
+		
+	4 Type IV --- Jdbc thin/Universal driver
+		- It is not used any middleware driver to connect the DB
+		- It is Two step process 
+		  1st step is Java code -> type 4 and 
+		  2nd step is type 4 to database & vice versa
+	
+		Fully in Java -- Portable -- Vendor specific
+		- e.g. MySQL Connector (mysql-connector-x.y.z.jar) , Oracle thin driver (ojdbcx.jar), Driver url is 
+			Mysql => com.mysql.cj.jdbc.Driver
+			Oracle => oracle.jdbc.OracleDriver	
+	
+2 Explain JDBC Steps?/ Explain JDBC Connectivity?=> heena, nishigandha
+	1. Load & register driver class.
+			Class.ForName("com.mysql.cj.jdbc.Driver");
+			
+			static{
+			.....
+			}
+			
+			{
+				
+			}
+			
+		2. Get JDBC connection (using DriverManager).
+			jdbc:mysql://localhost:3306/emplyee, root ,root 
+		3. Create JDBC statement (SQL query).
+		4. Execute the query and collect result.
+			- SELECT ---> executeQuery() -- ResultSet (rows & cols)
+			OR
+			- Non-SELECT --> executeUpdate() -- int (affected rows).
+		5. Close all.	
+	
+
+3 what is prerequisite for MySQL Driver Connection
+	1 Driver Name 
+		String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+	2 Database url 
+		String DB_URL = "jdbc:mysql://localhost:3306/emp161db";
+	3 Database user
+		String DB_USER = "root";
+	4 Database password
+		String DB_PASSWORD = "Sumit@123";
+	5 we have to mysql connector 
+
+
+4 What is Statement? => Rahul,sharvari
+	
+	- Statement is an interface that present in java.sql.* package
+	- Its main purpose to represents SQL Statement & execute query with the database.
+	- It compiled & execute every time for each query
+	- It is used to execute different type of query like create,update,select & delete etc 
+	- It contains different methods like execute(),executeQuery(),executeUpdate().
+	- Each methods has its own functionality 
+		- execute() methods used to perform DDL oeprations like create,drop,and truncate the table & it returns only boolean value either true or false to validate table status changes.
+		- executeQuery() methods used to perform DQL oeprations like select table data & it returns ResultSet Object, with the help of ResultSet Object we can get data from database
+		- executeUpdate() methods used to perform DML oeprations like insert, delete & update & it returns a interger value. That meaning is row is upadated successfully.
+
+	
+
+5 What is Prepared Statement? => heena 
+	
+	- PreparedStatement is an interface that present in java.sql.* package
+	- PreparedStatement is a subclass of Statement, it can do what a Statement can do, plus more
+	- PreparedStatement Object represents a precompiled SQL statement. Means When PreparedStatement is created, the SQL query is passed as a parameter. This Prepared Statement contains a pre-compiled SQL query, so you can be be used to execute the statement multiple times.
+	- we use prepareStatement() method of the Connection interface. This method accepts a query (parameterized) and returns a PreparedStatement object.so it works both static and dynamic queries.
+	- If we use dynamic queries for prepareStatement() method then we can set parameter value by setter method of PreparedStatement.
+	- PreparedStatement is best choice because it escapes the special characters  from query and avoid SQL injection attacks.
+	
+	
+6 Difference Between Statement & Prepared Statement?
+
+	Statement
+	1 At the time of creating statement object, we are not required to provide any query, so that means Statement Object is not associated with any query & we can use multiple queries
+	2 Whenever we are using execute method every time Query will be compile & execute.
+	3 Statement object can work for only static queries.
+	4 Relatively performance is low.
+	5 Best choice to use Statement if we want to work with multiple queries.
+	6 There may be a possibilty of SQL injection attack.
+	7 Inserting date and large object (clob & blob) is difficult.
+	
+PreparedStatement
+		1 At the time of creating PreparedStatement object, we are to required to provide SQl query. So It is associated with only one query.
+		2 It compiled only onces while getting Object of PreparedStatement.
+		3 Whenever we are using execute method query never compiled. it just will be executed
+		4 PreparedStatement object can work both static and dynamic queries.
+		5 Relatively performance is high.
+		6 Best choice to use PreparedStatement if we want to work with only one query but required to execute multiple times.
+		7 There is no possibilty of SQL injection attack.
+		8 Inserting date and large object (clob & blob) is easy.
+
+	
+7 Explain Types of Application?=> bhagyashri
+	Stand alone Application
+		1 GUI Based Application/Desktop
+			e.g Calculator
+		2 CUI Based Application-(Character User Interface Based)
+		 e.g All core java Application which are running from Command prompt is a CUI Based
+		Also Called Console Application
+
+		Web Application
+		e.g www.google.com
+		java enterprise application- Bank Application,Telecom Application
+		means it support atm,smart device, It is combination of all things(Multiple services) like Bank Application
+ 
+8 What is Server? => Pending 
+	
+9 Explain Http Methods?
+10 Explain Server-client Application Flow?/ Can you explain complete flow of on scenario where student will get added into database from jsp?
+
