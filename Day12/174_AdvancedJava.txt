@@ -1,0 +1,35 @@
+Last Lecture Agenda
+1 JSP Implementation
+	<%! int count=0;
+	%>
+	
+	<% count++;
+		out.println("....")
+		
+		if(count%2==0){
+	%>
+		<h2> Even number <%=count%>  </h2>
+		<%
+			out.....
+		}else{
+		%>
+		<h2> odd number </h2>
+		
+		<%	....
+		}
+		
+	%>
+	
+	<%=count%>
+	
+2 MVC Arch.
+3 Servlet + JSP
+
+summary & Interview Questions
+1 How we can use MVC with servlet-Jsp
+
+Today's Lecture Agenda
+1 Servlet + JSP
+
+summary & Interview Questions
+1 How we can use MVC with servlet-Jsp
