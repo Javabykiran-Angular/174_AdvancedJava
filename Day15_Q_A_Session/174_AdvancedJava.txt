@@ -1,0 +1,128 @@
+Last Lecture Agenda
+1 Servlet + JSP continue
+2 Introduction to Hibernate
+- It is Freamwork 
+	- It is ORM Freamwork 
+	
+  - Hibernate is a freamwork.
+  - It is Java ORM Freamwork
+  - ORM is Object Relation Mapping
+  O => Object - It is your pojo class Object or Entity class Object
+  R => Relational => The word relational is refere to database, so in your application database may be h2,oracle, Mysql, postgreSQl
+  Mapping => Map your Object to DB directly
+  - ORM => It is techquie or solution is going to interact to database with the help of mapping. We write a code that object is stored inside the database or you can load that data from database into the object.
+  - ORM which create a bridge for communication for your  application(java/ python/.net) with relational database so it is called ORM.
+	
+3 What is JPA?
+	- ORM which create a bridge for communication for your  application(java/ python/.net) with relational database so it is called ORM.
+	- In the market there are many more ORM for java Application like Hibernate, TopLink, MyBatis and EclipseLink. This are top ORM providers.
+	- Each ORM has its own api Method to interact with database to store or get the data from database.
+	- To access any ORM in your application we required its individual jar to add in our project, then we can use its own method to interact with DB.
+	- After some time i want to use any other ORM in my application then for that i have to remove hibernate ORM and add different other orm to access a data from DB then in that case we have to use a particular ORM jar files into our project and use its own different method. So in that case again we have do some extra efforts to write down the code for this particular ORM.
+	- Again we have write code for other ORM freamwork, it is very difficult for developer as well as other team to manage the jars 
+	- To avoid all this things JPA comes into the Picture i.e called Java Persistence API.
+	- JPA is define a set of rules or specifications for ORM freamwork in java.
+	- JPA is Interface has some method that we can use with help of any ORM impelmentation like save ,update method.
+	- JPA is Standard to maintain for all ORM so it is called specifications
+ 
+
+4 Explain The difference between hibernate & JDBC
+
+ Hibernate 
+    1 It is java based ORM freamwork.
+	2 Hibernate can map your entity class object data directly to database with the help of predfined annotations.
+	3 Hibernate manage all exceptions itself.
+	4 Hibernate uses HQL(Hibernate query Language) similiar to sql to provide additiional features of OOPS concept like inheritance, association and many more. 
+	5 In the hibernate you can manage all type of association like one to one mapping 	, one to many , many to one and many to many can perform ease way with the help of annotations.
+	6 Hibernate provide good support for lazy loading.
+	7 All transaction management is handled by hibernate automatically.
+	8 It has to wait for more time to get solution for any issue i.e. good support service is not available. 
+	9 Hibernate provide two level caching mechanism like L1 cache & L2 cache.
+	
+   JDBC
+	1 It is database connectivity tool.
+	2 In JDBC can not map entity class object data directly to database, for that we have to write some piece code.
+	3 JDBC needs  to write try catch block to manage all exceptions.
+	4 JDBC can create a queries & update the data relational database using the structured query Language.
+	5 JDBC is difficult to manage association mapping like one to one ,many to one & so on .
+	6 JDBC does not support for lazy loading.
+	7 In JDBC All transaction management is managed by iteself when working with JDBC code.
+	8 JDBC has strong community get solution for any issue i.e. good support service available.
+	9 JDBC need to write a code for implementing caching.
+	
+summary & Interview Questions
+1 What is Hibernate?
+2 What is JPA?
+3 Explain The difference between hibernate & JDBC 
+
+
+
+Today's Lecture Agenda
+1 What is Server? => Shivam , Shubhangi
+	It is basically to run your application continue to access end user 
+	1 H/w Server- physical Machine(It has one or more S/W server run with differentiate using port)
+	2 S/W Server
+    - Web Server- IIS (Microsoft),Glassfish (sun Microsystem),Tomcat server(Apache), Jetty
+			
+    - Application Server- mysql, Angular server,Oracle server weblogic,Jboss (Red Hat),IBM WebSphere
+	- one port has one application only 
+	
+2 Explain Http Methods?=> Nishigandha, bhagyashri
+	
+	1 get method => it fetch a data from backend server 
+	2 post => it sends a data from front end server to backend server 
+	3 put => It is used to update a particular record 
+	4 delete => It is used to delete a particular record 
+	
+	
+
+3 What is difference between Get and Post method?
+	Get -
+	1) Limited amount of data can be sent 
+	2) Not Secured because data is exposed in URL bar.
+	3) we can send as well as get a data 
+	4) It is not reliable for sending a data for backend server
+	5) It is used to fetch a data from backend server 
+	Post
+	1) Large amount of data can be sent because data is sent in Http body.
+	2) Secured because data is not exposed in URL bar.
+	3) we can send data from frontend server to backend server only 
+	4) It is reliable for sending a data for backend server
+	5) It is used to send data from front-end server
+	
+4 Explain Server-client Application Flow?/ Can you explain complete flow of on scenario where student will get added into database from jsp? => Aniket , Shubhangi
+
+
+
+5 What is Servlet? => Nishighandha,Shivam 
+	- It is server side technology 
+	- It is used to handle client(browser) side request to process the request and generate dynamic response
+	- Explain Hireahy
+	- Enterprise application 
+
+6 Explain Servlet Life Cycle?=> Aniket 
+	1 init => only once it is invoked 
+	2 service => doget => It invokes many more time 
+	3 destroy => it invoked only once 
+
+7 Explain Servlet collaboration => bhagyashri
+	Call from one servlet to another servlet is called servlet collaboration. We can add another HTML file (i.e. call from one servlet to another html file). To perform servlet collaboration task we have to required an object of request Dispatcher. Request dispatcher object we can obtained from HttpServletRequest 
+	In this RequestDispacther there are 2 method 
+		1 forward(request ,response)
+		2 include(request ,response)
+	
+8 What is JSP? => Shivam, Aniket  
+	- JSP is front-end technology i.e. web ui.
+	- It is used only for Java Technology	
+	- It Contain HTML tags + JSP tags + Custom tags + Java code
+	- In jsp we can Write Presentation Logic as well as Business Logic
+	- JSP Support only 3 methods 
+		1 GET 2 POST 3 HEAD
+	- JSP is converted into the servlet during execution.
+	- Jsp Also has its own Life cycle
+		jsp_init(),jsp_service(),jsp_destroy()
+		
+pending => 	
+9 Which Implicit Object present in JSP? What are implicit objects of jsp
+10 Difference between jsp and servlet?
+11 How many objects of a servlet is created?
