@@ -1,0 +1,84 @@
+Last Lecture Agenda
+1 What is Server? => Shivam , Shubhangi
+	It is basically to run your application continue to access end user 
+	1 H/w Server- physical Machine(It has one or more S/W server run with differentiate using port)
+	2 S/W Server
+    - Web Server- IIS (Microsoft),Glassfish (sun Microsystem),Tomcat server(Apache), Jetty
+			
+    - Application Server- mysql, Angular server,Oracle server weblogic,Jboss (Red Hat),IBM WebSphere
+	- one port has one application only 
+	
+2 Explain Http Methods?=> Nishigandha, bhagyashri
+	
+	1 get method => it fetch a data from backend server 
+	2 post => it sends a data from front end server to backend server 
+	3 put => It is used to update a particular record 
+	4 delete => It is used to delete a particular record 
+	
+	
+
+3 What is difference between Get and Post method?
+	Get -
+	1) Limited amount of data can be sent 
+	2) Not Secured because data is exposed in URL bar.
+	3) we can send as well as get a data 
+	4) It is not reliable for sending a data for backend server
+	5) It is used to fetch a data from backend server 
+	Post
+	1) Large amount of data can be sent because data is sent in Http body.
+	2) Secured because data is not exposed in URL bar.
+	3) we can send data from frontend server to backend server only 
+	4) It is reliable for sending a data for backend server
+	5) It is used to send data from front-end server
+	
+4 Explain Server-client Application Flow?/ Can you explain complete flow of on scenario where student will get added into database from jsp? => Aniket , Shubhangi
+
+
+
+5 What is Servlet? => Nishighandha,Shivam 
+	- It is server side technology 
+	- It is used to handle client(browser) side request to process the request and generate dynamic response
+	- Explain Hireahy
+	- Enterprise application 
+
+6 Explain Servlet Life Cycle?=> Aniket 
+	1 init => only once it is invoked 
+	2 service => doget => It invokes many more time 
+	3 destroy => it invoked only once 
+
+7 Explain Servlet collaboration => bhagyashri
+	Call from one servlet to another servlet is called servlet collaboration. We can add another HTML file (i.e. call from one servlet to another html file). To perform servlet collaboration task we have to required an object of request Dispatcher. Request dispatcher object we can obtained from HttpServletRequest 
+	In this RequestDispacther there are 2 method 
+		1 forward(request ,response)
+		2 include(request ,response)
+	
+8 What is JSP? => Shivam, Aniket  
+	- JSP is front-end technology i.e. web ui.
+	- It is used only for Java Technology	
+	- It Contain HTML tags + JSP tags + Custom tags + Java code
+	- In jsp we can Write Presentation Logic as well as Business Logic
+	- JSP Support only 3 methods 
+		1 GET 2 POST 3 HEAD
+	- JSP is converted into the servlet during execution.
+	- Jsp Also has its own Life cycle
+		jsp_init(),jsp_service(),jsp_destroy()
+		
+pending => 	
+9 Which Implicit Object present in JSP? What are implicit objects of jsp
+10 Difference between jsp and servlet?
+11 How many objects of a servlet is created?
+	
+summary & Interview Questions
+1 What is Hibernate?
+2 What is JPA?
+3 Explain The difference between hibernate & JDBC 
+
+
+
+Today's Lecture Agenda
+1 Hibernate Configuration
+2 Hibernate functions
+
+summary & Interview Questions
+1 Which configuration we have to does for hibernate?
+2 Tell the Hibernate inbuilt functions
