@@ -1,0 +1,17 @@
+Last Lecture Agenda
+1 Hibernate Configuration File
+	jboss tool 
+	
+summary & Interview Questions
+1 What is Hibernate?
+2 What is JPA?
+3 Explain The difference between hibernate & JDBC 
+
+
+
+Today's Lecture Agenda
+1 Hibernate functions
+
+summary & Interview Questions
+1 Which configuration we have to does for hibernate?
+2 Tell the Hibernate inbuilt functions
