@@ -1,0 +1,28 @@
+Last Lecture Agenda
+1 Hibernate functions
+ 1 persist
+ 2 merge
+ 3 get 
+
+summary & Interview Questions
+1 Which configuration we have to does for hibernate?
+2 Tell the Hibernate inbuilt functions
+
+
+
+Today's Lecture Agenda
+1 Delete functions
+	remove()
+	Criteribuilder()
+	CreateQuery()
+	from()
+	select()
+2 Get all Records from DB 
+3 HQL
+	Hibernate Query lang 
+	
+
+summary & Interview Questions
+1 How to delete particular data
+2 How to get all records?
+3 What is HQL 
