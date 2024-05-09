@@ -1,0 +1,42 @@
+Last Lecture Agenda
+1 Delete functions
+	remove()
+	Criteribuilder()
+	CreateQuery()
+	from()
+	select()
+2 Get all Records from DB 
+3 HQL
+	Hibernate Query lang 
+	String query="update Song set artist=:myartist, name=:myname where id=:id";
+	
+	MutationQuery mquery= session.createMutationQuery(query);
+	mQuery.setparameter("myartist","...");
+	mQuery.setparameter("id",3);
+	mquery.executeUpdate();
+	session.getTranscation().commit();
+	session.close();
+	
+	
+
+summary & Interview Questions
+1 How to delete particular data
+2 How to get all records?
+3 What is HQL 
+
+
+Today's Lecture Agenda
+1 GetParticular Records
+2 getAllRecord  
+3 Delete Records
+4 Hibernate Mapping
+// has a relationship
+
+	- one to one 
+	- one to many
+	- many to one 
+	- many to many 
+	
+
+summary & Interview Questions
+1 Explain crud Operation in HQL 
