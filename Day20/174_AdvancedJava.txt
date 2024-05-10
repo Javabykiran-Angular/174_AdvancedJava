@@ -1,0 +1,29 @@
+Last Lecture Agenda
+1 GetParticular Records
+2 getAllRecord  
+3 Delete Records
+4 Hibernate Mapping
+// has a relationship
+
+	- one to one 
+	- one to many
+	- many to one 
+	- many to many 
+	
+
+summary & Interview Questions
+1 Explain crud Operation in HQL 
+
+Today's Lecture Agenda
+1 Hibernate Mapping
+	- one to one 
+	- one to many
+	- many to one 
+	- many to many 
+2 one to one
+3 Many to one Mapping
+4 one to Many => Pending
+
+summary & Interview Questions
+1 Explain One to one mapping?
+2 Explain Many to one Mapping?
