@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+        
+  <beans>
+  
+  	<bean id="kuchbhi" class="com.tka.entity.Employee" >
+  		<property name="id1" value="9"></property>
+  		<property name="name" value="Sumit"></property>
+  		<property name="mobileno" value="9960556397"></property>
+  		<property name="country" ref="con"></property>
+  		
+  		<!-- <constructor-arg index="0" value="Sumit">
+  		</constructor-arg>
+  		<constructor-arg index="1" value ="7972547618"></constructor-arg> -->
+  		
+  	</bean>  	
+  	
+  	<bean id="con" class="com.tka.entity.Country">  	
+  		<property name="cid" value="27"></property>
+  		<property name="cname" value="India"></property>  	
+  	
+  	</bean>
+  	
+  	
+  </beans>
