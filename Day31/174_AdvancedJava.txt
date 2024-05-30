@@ -1,0 +1,162 @@
+Last Lecture Agenda
+1 Json Object 
+	- java Script Object Notation
+	- It is light weight Object 
+	- It kept data into key & value format 
+	synatx 
+	{
+		id:9,
+		fname:"sumit",
+		lname:"Raokhande"
+	}
+	For postman S/w or Tool 
+		{
+			"id":"9",
+			"fname":"sumit",
+			"lname":"Raokhande"
+		}
+		
+	{
+		"id":"9",
+		"fname":"Sumit",
+		"country":{
+			"cid":"1",
+			"cname":"India"
+		}
+	}
+		
+2 Array of Object
+	
+	[
+		{
+			"id":"9",
+			"fname":"sumit",
+			"lname":"Raokhande"
+		},
+		{
+			"id":"6",
+			"fname":"Kiran",
+			"lname":"Raokhande"
+		},
+		{
+			"id":"3",
+			"fname":"Spruha",
+			"lname":"Raokhande"
+		}
+	]
+	
+
+3 Rest Vs Soap
+	+ REST 
+		- Typically REST works on top of HTTP protocol
+		- Can be accessed from any device which has internet connection.
+		- REST is lightweight (than SOAP)
+			- gives freedom -- XML or JSON -- JSON is preferred.
+			- JSON processing is lighter.
+			- JSON needs less data
+
+	+ SOAP 
+		- SOAP services gives XML data 
+		- Can be accessed & processing XML data needs more device config.
+			- XML processing is heavy
+			- XML needs more data=> It required more memory consumption
+
+4 Difference between Spring & Spring Boot
+	Spring 
+ 1 Spring is Freamwork
+ 2 You have to create explicitly IOC Container
+ 3 If you work with mvc or REST API then you need to configure tomcat server by yourself.
+ 
+Spring Boot
+1 It is  tool which makes the work easier to create ready to run application.
+2 IOC Container is create automatically we don't required to create explicitly.
+3 Where as in Spring Boot it is embedded tomact server in it. It is making your life easier.
+
+
+5 Http Request & Http Response
+	Http Request => 2 parts 
+	1 Http header 
+		Req Method = GET/POST/PUT/DELETE
+			Uri = resource identifier
+			HTTP version =  1.1
+			Browser language = en
+			Client/Browser = IP address
+			Content Type = type of data
+				text
+					text/plain, text/xml, "text/html"
+				image
+					image/jpeg, image/png, ...
+				audio
+					audio/mp3, audio/wav, ...
+				video
+					video/mpeg, ...
+				application
+					application/json, application/pdf, ...
+					
+			Content Length = num of bytes in body
+			Cookies
+			User-Agent = Browser details
+	
+	2 Http body 
+		data 
+				e.g. form data -- in key=value pair.
+				e.g. JSON data,html,xml(outdated) 
+
+Http Response
+	Headers:
+			HTTP version=1.0/1.1
+			Content-Type= type of data in resp body.
+			Content-Length= num of bytes in resp body.
+			Status code & message
+			
+				HTTP Status code:
+					1 2xx=> 200-299 --> success e.g. 200 (success/OK)
+					2 3xx 300-399 --> redirection e.g. 302 (http redirection)resource move to other
+					3 4xx  400-499 --> client side errors e.g. 403 (forbidden), 404 (not found), 400 (Bad Request) ...	
+					4 5xx 500-599 --> server errors Whenever there is problem on server side this series is used			
+			
+			
+			Server info= IP address
+			Cookies
+		Body:
+			data
+				e.g. HTML tags
+				e.g. JSON data
+6 Http Methods 
+	1 get => to fetch a data from backend server 
+	2 post => to send data from frontend server to backend server 
+	3 put =>  to update a particular record 
+	4 delete => to delete a particular record 
+
+7 Download & Install Postman S/w 
+
+summary & Interview Questions
+1 Difference between Rest & Soap
+2 How to create Json Object
+3 How to create array of object
+4 Difference between Spring & Spring Boot.
+
+
+
+Today's Lecture Agenda
+1 Spring Boot Application
+2 Request Mapping
+3 Postman
+
+summary & Interview Questions
+1 Which parameter is used in request mapping
+2 Wgich is the Spring boot Annotation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
