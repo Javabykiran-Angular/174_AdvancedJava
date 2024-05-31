@@ -1,0 +1,37 @@
+Last Lecture Agenda
+1 Spring Boot Application
+2 Request Mapping
+3 Postman
+
+summary & Interview Questions
+1 Which parameter is used in request mapping
+2 Wgich is the Spring boot Annotation
+
+
+Today's Lecture Agenda
+1 Request Mapping 
+2 GetMapping
+3 PostMapping
+4 put Mapping => @PutMapping
+5 delete mapping => @DeleteMapping
+6 Path Variable
+
+summary & Interview Questions
+1 Which parameter is used in request mapping
+2 What is runner main class in spring boot what annotation you use in it?
+3 What is runner main class in spring boot what annotation you use in it?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
