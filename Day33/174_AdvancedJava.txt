@@ -1,0 +1,43 @@
+Last Lecture Agenda
+1 Request Mapping 
+	- get,post,put,delete 
+	@RequestMapping(value="..",method=RequestMethod.Post)
+2 GetMapping
+3 PostMapping
+4 put Mapping => @PutMapping
+5 delete mapping => @DeleteMapping
+6 Path Variable => @PathVariable 
+	
+		@PutMapping("updaterecord/{id}")
+		public String update(@PathVariable int id){
+			
+		}
+
+summary & Interview Questions
+1 Which parameter is used in request mapping
+2 What is runner main class in spring boot what annotation you use in it?
+3 What is runner main class in spring boot what annotation you use in it?
+
+Today's Lecture Agenda
+1 Request param => another word i.e called Query parameter (url rewriting )
+2 Database integration 
+
+summary & Interview Questions
+1 Explain the Steps to store data into database
+2 Where to set database configuration in spring boot 
+3 How to do curd operations in spring boot 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
