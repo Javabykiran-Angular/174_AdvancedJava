@@ -1,0 +1,33 @@
+Last Lecture Agenda
+1 Request param => another word i.e called Query parameter (url rewriting )
+2 Database integration => addRecord
+
+summary & Interview Questions
+1 Explain the Steps to store data into database
+2 Where to set database configuration in spring boot 
+3 How to do curd operations in spring boot 
+
+Today's Lecture Agenda
+1 Update Record
+2 Delete Record
+3 GetAll Record 
+
+summary & Interview Questions
+1 How to do the curd operation 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
