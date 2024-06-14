@@ -1,0 +1,51 @@
+Last Lecture Agenda
+1 Test 2 
+
+summary & Interview Questions
+NA 
+
+Today's Lecture Agenda
+1 GitHub 
+
+- GitHub is a website and cloud based service that helps to developers store and manage their code as well as track & control their code.
+ - It offers cloud based git repository hosting services.
+ - GitHub is connected two major Principal
+	1 Version Control
+	2 Git 
+	
+	1 Version Control
+		- Version control helps developers track and manage changes to a software project’s code.
+		- As a software project grows, version control becomes essential for to track your project versions code 
+		- version control lets developers safely work through branching and merging.
+		- With branching, a developer duplicates part of the source code (called the repository)
+		- Developers can make changes a particular part of code safely without affecting the rest of the project code.
+		- Once developers completed changes a particular part of code then it can merge that code back into the main source code
+		- All this changes will track and reverted whenever neccessary.
+	
+	2 Git 
+		- It is a specific open-source version control system.
+		- Git is a distributed version control system
+		- That means entire code and its history is available to everyone.
+		- To achieve this things git provide some basic commands to create,store & manage your codebase.
+ - So GitHub is combination of both version Control & git to make GitHub, that interface is available for end user cloud based hosting service.
+
+vendors=> 	
+github, gitlab,bitbucket...	
+
+3 Upload Project on GitHub
+
+summary & Interview Questions
+1 How to Upload Project on git hub 
+
+ git config --global user.name "John Doe"
+ git config --global user.email johndoe@example.com
+
+
+
+
+
+
+
+
+
+
